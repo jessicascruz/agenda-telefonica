@@ -1,28 +1,24 @@
-<!-- Menu superior -->
-<div class="menu-superior" fxLayout="row">
-  <div class="" fxFlex="20">
-    <img class="mt-3 ml-3" src="../assets/img/contato_img.png" alt="">
-    <span class="mt-4">Contatos</span>
-  </div>
-  <div class="" fxFlex="50" fxLayoutAlign="center">
-    <mat-form-field class="" appearance="outline" fxFlex="100">
-      <input matInput type="search" placeholder="Pesquisa">
-    </mat-form-field>
-  </div>
-  <div class="container mt-2" fxFlex="30">
-    <span class="menu-config mt-2" fxFlex="80" fxLayoutAlign="end">
-      <mat-icon aria-hidden="false" aria-label="Configurações">settings</mat-icon>
-    </span>
-    <span class="menu-usuario" fxFlex="20" fxLayoutAlign="end">
-      <img class="img-usuario" src="../assets/img/perfil.png" alt="">
-    </span>
-  </div>
-</div>
+<div class="jumbotron">
+  <h1>
+      {{title}}
+  </h1>
 
-<!-- Corpo -->
-<div class="ml-2" fxLayout="row">
-  <button mat-raised-button class="btn-adicionar" (click)="openDialog()">
-    <mat-icon aria-hidden="false" aria-label="Adicionar contato">add_circle_outline</mat-icon>
-    Criar contato
-  </button>
+  <br>
+  <br>
+
+  <app-dados-usuario></app-dados-usuario>
+
+  <br>
+  <br>
+
+  <div class="row">
+      <div class="col">
+          <app-lista-usuario (idClicado)="enviarDetalhe($event)"></app-lista-usuario>
+      </div>
+
+      <div class="col">
+          <app-detalhe-usuario [contato]="contatoclicado"></app-detalhe-usuario>
+      </div>
+
+  </div>
 </div>

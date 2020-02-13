@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { ContatoModel } from './modelos/contato-model';
+import { ContatosDataBaseService } from './servicos/contatos-data-base.service';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,13 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Contato';
+  title = 'Projeto de Contatos';
 
-  constructor() {}
+  contatoclicado: ContatoModel;
 
-  openDialog() {}
+  constructor(private dataBaseService: ContatosDataBaseService) {}
 
+  enviarDetalhe(id): void {
+    this.contatoclicado = this.dataBaseService.getContato(id);
+  }
 }

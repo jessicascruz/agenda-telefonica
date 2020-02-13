@@ -1,36 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatCardModule } from '@angular/material/card';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDialogModule } from '@angular/material/dialog';
-import { ReactiveFormsModule } from '@angular/forms';
+import { DadosUsuarioComponent } from './dados-usuario/dados-usuario.component';
+import { DetalheUsuarioComponent } from './detalhe-usuario/detalhe-usuario.component';
+import { ListaUsuarioComponent } from './lista-usuario/lista-usuario.component';
 
 @NgModule({
    declarations: [
       AppComponent,
+      DadosUsuarioComponent,
+      DetalheUsuarioComponent,
+      ListaUsuarioComponent
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
-      ReactiveFormsModule,
-
-      // Material
-      BrowserAnimationsModule,
-      MatSliderModule,
-      MatCardModule,
-      MatInputModule,
-      MatButtonModule,
-      MatIconModule,
-      MatDialogModule,
-      FlexLayoutModule
+      FormsModule
    ],
    providers: [],
    bootstrap: [
